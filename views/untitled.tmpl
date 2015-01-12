@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="styles/untitled.css"></link>
+	<title>TaskAmbient</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="scripts/untitled.js"></script>
+</head>
+<body>
+	<div id="menu">
+		<div id="focusMenu">
+			<button id="priority-focus" type="button" class="btn btn-default btn-block">Priority</button>
+			<button id="no-priority-focus" type="button" class="btn btn-default btn-block">No Priority</button>
+			<button id="upcoming-focus" type="button" class="btn btn-default btn-block">Upcoming</button>
+			<button id="todo-focus" type="button" class="btn btn-default btn-block">From Todo App</button>
+			<button id="calendar-focus" type="button" class="btn btn-default btn-block">From Google Cal.</button>
+		</div>
+		<div id="filterMenu">
+			<button id="category-filter" type="button" class="btn btn-default btn-block">Category</button>
+			<button id="date-filter"type="button" class="btn btn-default btn-block">Date</button>
+			<div id="categoryMenu">
+				<%if {blueAorLabel}%>
+					<button id="cat0" type="button" class="btn btn-default btn-block">{blueAorLabel}</button>
+				<%end%>
+				<%if {redAorLabel}%>
+					<button id="cat1" type="button" class="btn btn-default btn-block">{redAorLabel}</button>
+				<%end%>
+				<%if {greenAorLabel}%>
+					<button id="cat2" type="button" class="btn btn-default btn-block">{greenAorLabel}</button>
+				<%end%>
+				<%if {yellowAorLabel}%>
+					<button id="cat3" type="button" class="btn btn-default btn-block">{yellowAorLabel}</button>
+				<%end%>
+				<%if {orangeAorLabel}%>
+					<button id="cat4" type="button" class="btn btn-default btn-block">{orangeAorLabel}</button>
+				<%end%>
+				<%if {purpleAorLabel}%>
+					<button id="cat5" type="button" class="btn btn-default btn-block">{purpleAorLabel}</button>
+				<%end%>
+			</div>
+			<div id="dateMenu">
+				<label for="from">From</label>
+				<input type="text" id="from" name="from">
+				<label for="to">to</label>
+				<input type="text" id="to" name="to">
+				<br>
+				<button id="dateOK" type="button" class="btn btn-default">Go</button>
+			</div>
+		</div>
+
+		<div id="focusStatus"></div>
+		<div id="filterStatus"></div>
+		<div id="viewStatus"></div>
+
+		<button id="focus" type="button" class="btn btn-default"> <i class="fa fa-binoculars"></i> Focus </button>
+		<button id="filter" type="button" class="btn btn-default"> <i class="fa fa-filter"></i> Filter </button>
+		<button id="viewAll" type="button" class="btn btn-default"><i class="fa fa-list"></i> View All To-dos </button>
+		<button id="viewComp" type="button" class="btn btn-default"> <i class="fa fa-clock-o"></i> View Past To-dos</button>
+		<button id="refresh" type="button" class="btn btn-default"> <i class="fa fa-refresh"></i> Refresh </button>
+		<button id="settings" type="button" class="btn btn-default"> <i class="fa fa-cog"></i> Settings </a>
+	</div>
+	<% if {username} %>
+		<input id="theuser" type="hidden" name="username" value="{username}">
+	<% end %>
+</body>
+
+</html>
